@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Productos de la categoría</h1>
+<ul>
+{% for producto in productos %}
+    <li><a href="{% url 'detalle_producto' producto.id %}">{{ producto.nombre }}</a></li>
+{% endfor %}
+</ul>   
+{% endblock %}

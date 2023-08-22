@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Presentación</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #f5f5f5;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .interactive-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .card {
+            flex: 1;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card p {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Bienvenido a Nuestra Tienda</h1>
+            <p>Descubre los mejores productos y ofertas especiales solo para ti.</p>
+            <button id="exploreBtn">Explorar</button>
+        </div>
+        <div class="interactive-section">
+            <div class="card">
+                <img src="path_to_image1.jpg" alt="Producto 1">
+                <p>Producto destacado 1</p>
+            </div>
+            <div class="card">
+                <img src="path_to_image2.jpg" alt="Producto 2">
+                <p>Producto destacado 2</p>
+            </div>
+            <!-- Puedes agregar más tarjetas de productos aquí -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('exploreBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.querySelector('.interactive-section').offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
